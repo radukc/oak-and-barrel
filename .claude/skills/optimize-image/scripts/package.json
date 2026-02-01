@@ -1,0 +1,7 @@
+{
+  "name": "optimize-image-scripts",
+  "type": "module",
+  "dependencies": {
+    "sharp": "^0.33.0"
+  }
+}

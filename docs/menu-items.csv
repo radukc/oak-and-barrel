@@ -1,0 +1,21 @@
+Category, Item Name, Description, Price, Badge
+Appetizers, Truffle Burrata,"Creamy burrata, black truffle, arugula", 5, popular
+Appetizers, Wagyu Beef Tartare, "Hand-cut wagyu, quail egg, capers", 5, chef's pick
+Appetizers, Crispy Calamari,"Lightly battered, served with marinara and garlic", 5, 
+Appetizers, Soup of the Day,"Chef's daily creation, served with croutons", 5,
+Sushi & Sashimi, Chef's Omakase,"A curated selection of the freshest sushi", 10, 
+Sushi & Sashimi, Dragon Roll,"Shrimp tempura, eel, avocado, spicy mayo", 10, popular
+Sushi & Sashimi,Salmon Sashimi,8 pieces of premium Norwegian salmon,26, chef's pick
+Sushi & Sashimi, Spicy Tuna Roll,"Fresh tuna, spicy mayo, cucumber, sesame seeds",18,
+Sushi & Sashimi, Rainbow Roll, California roll topped with assorted sashimi,24, popular
+Prime Steaks, Prime Ribeye, "16oz aged ribeye, herb butter, roasted garlic, seasonal vegetable", 24,
+Prime Steaks, Filet Mignon,"8oz center-cut tenderloin, red wine reduction, truffle mash",52, chef's pick
+Prime Steaks,NY Strip,"14oz bone-in strip, peppercorn sauce, crispy onion rings",48,
+Prime Steaks, Tomahawk Ribeye,"32oz bone-in ribeye for two, roasted bone marrow, chimichurri", 50,
+Burgers & Grills, The Classic Oak,"Prime beef patty, aged cheddar, lettuce, tomato, Oak & Bar", 48, 
+Burgers & Grills, Wagyu Smash Burger,"Double wagyu patties, American cheese, caramelized onion", 45, popular
+Burgers & Grills, Truffle Mushroom Burger,"Beef patty, swiss cheese, sauteed mushrooms, truffles", 40,
+Burgers & Grills, BBQ Bacon Burger, "Beef patty, smoked bacon, cheddar, crispy onions, house bacon", 40, chef's pick
+Craft Beverages, Local IPA, "Hoppy and citrus-forward, from our local craft brewery",8, popular
+Craft Beverages, Belgian Wheat, Light and refreshing with hints of orange and coriander,9, chef's pick
+Craft Beverages, Stout, Rich and creamy with coffee and chocolate notes, 9,
