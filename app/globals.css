@@ -187,3 +187,391 @@ body {
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+/* ============================================
+   n8n Chat Widget - Oak & Barrel Brand Styling
+   ============================================
+
+   This customization aligns the n8n chat widget with
+   the Oak & Barrel design system (docs/design/style-guide.md)
+
+   Color Palette Reference:
+   - Amber (primary): #F5A623
+   - Amber dark: #E08E00
+   - Cream: #FFFBF5
+   - Cream warm: #FFF5E6
+   - Cream deep: #F5EBD9
+   - Charcoal: #2D2A26
+   - Slate: #4A4543
+   - Stone: #7A746E
+   - Pebble: #B5AFA8
+*/
+
+:root {
+  /* === Core Colors === */
+  /* Note: n8n uses inconsistent naming - some have double dash, some single */
+  --chat--color--primary: #F5A623;
+  --chat--color--primary-shade-50: #E08E00;
+  --chat--color--primary--shade-100: #B87200;
+  --chat--color--secondary: #F5A623;
+  --chat--color-secondary-shade-50: #E08E00;
+  --chat--color-white: #FFFBF5;
+  --chat--color-light: #FFF5E6;
+  --chat--color-light-shade-50: #F5EBD9;
+  --chat--color-light-shade-100: #E5DFD5;
+  --chat--color-medium: #B5AFA8;
+  --chat--color-dark: #2D2A26;
+  --chat--color-disabled: #B5AFA8;
+  --chat--color-typing: #7A746E;
+
+  /* === Layout & Spacing === */
+  --chat--spacing: 1rem;
+  --chat--border-radius: 0.75rem;
+  --chat--transition-duration: 0.25s;
+  --chat--font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  /* === Window Dimensions === */
+  --chat--window--width: 400px;
+  --chat--window--height: 600px;
+  --chat--window--border: 1px solid #E5DFD5;
+  --chat--window--border-radius: 1rem;
+
+  /* === Body/Footer Background === */
+  --chat--body--background: #FFFBF5;
+  --chat--footer--background: #FFFBF5;
+  --chat--footer--color: #7A746E;
+
+  /* === Header Styling === */
+  --chat--header-height: auto;
+  --chat--header--padding: 1.25rem 1rem;
+  --chat--header--background: linear-gradient(135deg, #2D2A26 0%, #4A3728 100%);
+  --chat--header--color: #FFFBF5;
+  --chat--subtitle--color: #B5AFA8;
+
+  /* === Input Area === */
+  --chat--textarea--height: 50px;
+  --chat--input--background: #FFFFFF;
+  --chat--input--border: 1px solid #E5DFD5;
+  --chat--input--border-focus: 2px solid #F5A623;
+  --chat--input--color: #2D2A26;
+  --chat--input--placeholder: #B5AFA8;
+
+  /* === Messages === */
+  --chat--message--font-size: 0.9375rem;
+  --chat--message--padding: 0.875rem 1rem;
+  --chat--message--border-radius: 0.75rem;
+  --chat--message-line-height: 1.6;
+
+  /* Bot messages - warm cream background */
+  --chat--message--bot--background: #F5EBD9;
+  --chat--message--bot--color: #2D2A26;
+  --chat--message--bot--border: 1px solid #E5DFD5;
+
+  /* User messages - amber brand color */
+  --chat--message--user--background: linear-gradient(135deg, #F5A623 0%, #FFD166 100%);
+  --chat--message--user--color: #2D2A26;
+
+  /* === Toggle Button (Chat Bubble) === */
+  --chat--toggle--background: linear-gradient(135deg, #F5A623 0%, #E08E00 100%);
+  --chat--toggle--hover--background: linear-gradient(135deg, #E08E00 0%, #B87200 100%);
+  --chat--toggle--active--background: #B87200;
+  --chat--toggle--color: #2D2A26;
+  --chat--toggle--size: 60px;
+
+  /* === Button Styling === */
+  --chat--button--background: #F5A623;
+  --chat--button--hover--background: #E08E00;
+  --chat--button--color: #2D2A26;
+  --chat--button--border-radius: 0.5rem;
+  --chat--button--background--primary: #F5A623;
+  --chat--button--background--primary--hover-active-focus: #E08E00;
+  --chat--button--color--primary: #2D2A26;
+
+  /* === Send Button === */
+  --chat--input--send--button--background: #FFFBF5;
+  --chat--input--send--button--color: #F5A623;
+  --chat--input--send--button--background-hover: #FFF5E6;
+  --chat--input--send--button--color-hover: #E08E00;
+
+  /* === Links === */
+  --chat--link--color: #E08E00;
+  --chat--link--hover--color: #B87200;
+
+  /* === Close button === */
+  --chat--close--button--color-hover: #F5A623;
+}
+
+/* === Chat Widget Container Shadow === */
+.n8n-chat,
+[class*="n8n-chat"] .chat-window {
+  box-shadow: 0 8px 24px rgba(45, 42, 38, 0.12), 0 4px 8px rgba(45, 42, 38, 0.06);
+}
+
+/* === Typography - Apply Oak & Barrel fonts === */
+.n8n-chat,
+[class*="n8n-chat"] {
+  font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Header title - use display font */
+.n8n-chat .chat-header .chat-header-title,
+[class*="n8n-chat"] .chat-header .chat-header-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 600;
+  font-size: 1.125rem;
+  letter-spacing: 0.01em;
+}
+
+/* Header subtitle styling */
+.n8n-chat .chat-header .chat-header-subtitle,
+[class*="n8n-chat"] .chat-header .chat-header-subtitle {
+  font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.8125rem;
+  color: #B5AFA8;
+  font-weight: 400;
+}
+
+/* === Toggle Button (Floating Chat Bubble) === */
+.n8n-chat .chat-window-toggle,
+[class*="n8n-chat"] .chat-window-toggle,
+.chat-window-wrapper .chat-window-toggle {
+  background: linear-gradient(135deg, #F5A623 0%, #E08E00 100%) !important;
+  box-shadow: 0 4px 12px rgba(245, 166, 35, 0.35), 0 2px 4px rgba(45, 42, 38, 0.1) !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #2D2A26 !important;
+}
+
+.n8n-chat .chat-window-toggle:hover,
+[class*="n8n-chat"] .chat-window-toggle:hover,
+.chat-window-wrapper .chat-window-toggle:hover {
+  background: linear-gradient(135deg, #E08E00 0%, #B87200 100%) !important;
+  box-shadow: 0 6px 16px rgba(245, 166, 35, 0.45), 0 4px 8px rgba(45, 42, 38, 0.12) !important;
+  transform: scale(1.05);
+}
+
+.n8n-chat .chat-window-toggle:active,
+[class*="n8n-chat"] .chat-window-toggle:active,
+.chat-window-wrapper .chat-window-toggle:active {
+  transform: scale(0.98);
+}
+
+/* Also target the icon inside the toggle */
+.chat-window-toggle svg,
+.chat-window-wrapper .chat-window-toggle svg {
+  color: #2D2A26 !important;
+  fill: #2D2A26 !important;
+}
+
+/* === Chat Window === */
+.n8n-chat .chat-window,
+[class*="n8n-chat"] .chat-window {
+  border-radius: 1rem;
+  border: 1px solid #E5DFD5;
+  overflow: hidden;
+}
+
+/* === Header Gradient Background === */
+.n8n-chat .chat-header,
+[class*="n8n-chat"] .chat-header {
+  background: linear-gradient(135deg, #2D2A26 0%, #4A3728 100%);
+  border-bottom: none;
+}
+
+/* === Message Container Background === */
+.n8n-chat .chat-messages-container,
+[class*="n8n-chat"] .chat-messages-container {
+  background-color: #FFFBF5;
+}
+
+/* === Bot Messages === */
+.n8n-chat .chat-message-bot .chat-message-content,
+[class*="n8n-chat"] .chat-message-bot .chat-message-content {
+  background-color: #F5EBD9;
+  border: 1px solid #E5DFD5;
+  border-radius: 0.75rem 0.75rem 0.75rem 0.25rem;
+  color: #2D2A26;
+}
+
+/* === User Messages === */
+.n8n-chat .chat-message-user .chat-message-content,
+[class*="n8n-chat"] .chat-message-user .chat-message-content {
+  background: linear-gradient(135deg, #F5A623 0%, #FFD166 100%);
+  border: none;
+  border-radius: 0.75rem 0.75rem 0.25rem 0.75rem;
+  color: #2D2A26;
+  font-weight: 500;
+}
+
+/* === Input Area === */
+.n8n-chat .chat-input,
+[class*="n8n-chat"] .chat-input {
+  background-color: #FFFBF5;
+  border-top: 1px solid #E5DFD5;
+  padding: 0.875rem 1rem;
+}
+
+.n8n-chat .chat-input textarea,
+.n8n-chat .chat-input input,
+[class*="n8n-chat"] .chat-input textarea,
+[class*="n8n-chat"] .chat-input input {
+  background-color: #FFFFFF;
+  border: 1px solid #E5DFD5;
+  border-radius: 0.5rem;
+  color: #2D2A26;
+  font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 0.9375rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.n8n-chat .chat-input textarea:focus,
+.n8n-chat .chat-input input:focus,
+[class*="n8n-chat"] .chat-input textarea:focus,
+[class*="n8n-chat"] .chat-input input:focus {
+  border-color: #F5A623;
+  box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.15);
+  outline: none;
+}
+
+.n8n-chat .chat-input textarea::placeholder,
+.n8n-chat .chat-input input::placeholder,
+[class*="n8n-chat"] .chat-input textarea::placeholder,
+[class*="n8n-chat"] .chat-input input::placeholder {
+  color: #B5AFA8;
+}
+
+/* === Send Button === */
+.n8n-chat .chat-input button,
+.n8n-chat .chat-send-button,
+[class*="n8n-chat"] .chat-input button,
+[class*="n8n-chat"] .chat-send-button {
+  background-color: #F5A623;
+  color: #2D2A26;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.n8n-chat .chat-input button:hover,
+.n8n-chat .chat-send-button:hover,
+[class*="n8n-chat"] .chat-input button:hover,
+[class*="n8n-chat"] .chat-send-button:hover {
+  background-color: #E08E00;
+}
+
+.n8n-chat .chat-input button:active,
+.n8n-chat .chat-send-button:active,
+[class*="n8n-chat"] .chat-input button:active,
+[class*="n8n-chat"] .chat-send-button:active {
+  transform: scale(0.97);
+}
+
+.n8n-chat .chat-input button:disabled,
+.n8n-chat .chat-send-button:disabled,
+[class*="n8n-chat"] .chat-input button:disabled,
+[class*="n8n-chat"] .chat-send-button:disabled {
+  background-color: #E5DFD5;
+  color: #B5AFA8;
+  cursor: not-allowed;
+}
+
+/* === Focus States for Accessibility === */
+.n8n-chat .chat-toggle:focus-visible,
+.n8n-chat .chat-input button:focus-visible,
+.n8n-chat .chat-send-button:focus-visible,
+[class*="n8n-chat"] .chat-toggle:focus-visible,
+[class*="n8n-chat"] .chat-input button:focus-visible,
+[class*="n8n-chat"] .chat-send-button:focus-visible {
+  outline: 2px solid #F5A623;
+  outline-offset: 2px;
+}
+
+/* === Links in Messages === */
+.n8n-chat .chat-message-content a,
+[class*="n8n-chat"] .chat-message-content a {
+  color: #E08E00;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 0.2s ease;
+}
+
+.n8n-chat .chat-message-content a:hover,
+[class*="n8n-chat"] .chat-message-content a:hover {
+  color: #B87200;
+}
+
+/* === Typing Indicator === */
+.n8n-chat .chat-typing-indicator,
+[class*="n8n-chat"] .chat-typing-indicator {
+  color: #7A746E;
+}
+
+/* === Scrollbar Styling === */
+.n8n-chat .chat-messages-container::-webkit-scrollbar,
+[class*="n8n-chat"] .chat-messages-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.n8n-chat .chat-messages-container::-webkit-scrollbar-track,
+[class*="n8n-chat"] .chat-messages-container::-webkit-scrollbar-track {
+  background: #FFF5E6;
+}
+
+.n8n-chat .chat-messages-container::-webkit-scrollbar-thumb,
+[class*="n8n-chat"] .chat-messages-container::-webkit-scrollbar-thumb {
+  background-color: #D4CCC0;
+  border-radius: 3px;
+}
+
+.n8n-chat .chat-messages-container::-webkit-scrollbar-thumb:hover,
+[class*="n8n-chat"] .chat-messages-container::-webkit-scrollbar-thumb:hover {
+  background-color: #B5AFA8;
+}
+
+/* === New Conversation / Get Started Button === */
+.n8n-chat .chat-new-conversation-button,
+.n8n-chat [class*="get-started"],
+[class*="n8n-chat"] .chat-new-conversation-button,
+[class*="n8n-chat"] [class*="get-started"] {
+  background-color: #F5A623;
+  color: #2D2A26;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.n8n-chat .chat-new-conversation-button:hover,
+.n8n-chat [class*="get-started"]:hover,
+[class*="n8n-chat"] .chat-new-conversation-button:hover,
+[class*="n8n-chat"] [class*="get-started"]:hover {
+  background-color: #E08E00;
+}
+
+/* === Powered By Footer (if visible) === */
+.n8n-chat .chat-footer,
+[class*="n8n-chat"] .chat-footer {
+  background-color: #FFFBF5;
+  border-top: 1px solid #F0EBE3;
+  color: #7A746E;
+  font-size: 0.75rem;
+}
+
+/* === Loading/Thinking Animation === */
+.n8n-chat .chat-message-loading,
+[class*="n8n-chat"] .chat-message-loading {
+  background-color: #F5EBD9;
+  border-radius: 0.75rem;
+}
+
+/* === Message Timestamp === */
+.n8n-chat .chat-message-timestamp,
+[class*="n8n-chat"] .chat-message-timestamp {
+  color: #7A746E;
+  font-size: 0.6875rem;
+}

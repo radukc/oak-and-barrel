@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import ChatWidget from "@/components/chat/ChatWidget";
 
 export const metadata: Metadata = {
   title: "Oak & Barrel | NYC Steakhouse, Sushi & Craft Beers",
@@ -23,7 +24,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <ChatWidget />
+      </body>
     </html>
   );
 }
