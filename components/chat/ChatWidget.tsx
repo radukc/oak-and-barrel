@@ -34,6 +34,7 @@ export default function ChatWidget() {
             footer: "",
             getStarted: "New Conversation",
             inputPlaceholder: "Type your message...",
+            closeButtonTooltip: "Close chat",
           },
         },
       });
