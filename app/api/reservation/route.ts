@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const WEBHOOK_URL =
-  "https://srv1237560.hstgr.cloud/webhook-test/make-reservation";
+  "https://srv1237560.hstgr.cloud/webhook/make-reservation";
 const WEBHOOK_USERNAME = process.env.WEBHOOK_USERNAME!;
 const WEBHOOK_PASSWORD = process.env.WEBHOOK_PASSWORD!;
 
