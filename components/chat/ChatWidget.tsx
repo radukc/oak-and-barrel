@@ -14,7 +14,7 @@ export default function ChatWidget() {
 
       createChat({
         webhookUrl:
-          "https://raduc.app.n8n.cloud/webhook/f600a73e-2140-4bea-a58b-c52dc31fd611/chat",
+          "https://srv1237560.hstgr.cloud/webhook/f600a73e-2140-4bea-a58b-c52dc31fd611/chat",
         webhookConfig: {
           method: "POST",
           headers: {

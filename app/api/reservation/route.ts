@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const WEBHOOK_URL =
-  "https://raduc.app.n8n.cloud/webhook/make-reservation";
+  "https://srv1237560.hstgr.cloud/webhook-test/make-reservation";
 const WEBHOOK_USERNAME = "oak-barrel";
 const WEBHOOK_PASSWORD = "oak-barrel#123";
 
