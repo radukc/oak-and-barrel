@@ -8,8 +8,8 @@ export default function ChatWidget() {
     const initChat = async () => {
       const { createChat } = await import("@n8n/chat");
 
-      const username = "oak-barrel";
-      const password = "oak-barrel#123";
+      const username = process.env.NEXT_PUBLIC_WEBHOOK_USERNAME!;
+      const password = process.env.NEXT_PUBLIC_WEBHOOK_PASSWORD!;
       const credentials = btoa(`${username}:${password}`);
 
       createChat({

@@ -2,8 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 const WEBHOOK_URL =
   "https://srv1237560.hstgr.cloud/webhook-test/make-reservation";
-const WEBHOOK_USERNAME = "oak-barrel";
-const WEBHOOK_PASSWORD = "oak-barrel#123";
+const WEBHOOK_USERNAME = process.env.WEBHOOK_USERNAME!;
+const WEBHOOK_PASSWORD = process.env.WEBHOOK_PASSWORD!;
 
 export async function POST(request: NextRequest) {
   try {
